@@ -37,6 +37,7 @@
       muteBtn.addEventListener('click', function () {
         if (audio.muted) {
           audio.muted = false;
+          audio.play();
           muteBtn.textContent = 'mute';
         } else {
           audio.muted = true;
