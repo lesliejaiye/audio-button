@@ -17,7 +17,7 @@
 </head>
 <body>
   <audio id="myAudio" autoplay loop muted playsinline>
-    <source src="https://res.cloudinary.com/dhigle4nw/video/upload/v1747096287/thandie_video_s2cnjp.mp4" type="audio/mpeg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 
   <button id="mtnBtn">unmute</button>
@@ -30,7 +30,7 @@
       muteBtn.addEventListener('click', function () {
         if (audio.muted) {
           audio.muted = false;
-          audio.play(); // Ensure it plays
+          audio.play(); 
           muteBtn.textContent = 'mute';
         } else {
           audio.muted = true;
