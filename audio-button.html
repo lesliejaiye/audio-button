@@ -1,49 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Audio Toggle</title>
-  <style>
-    #mtnBtn {
-      background-color: black;
-      border: none;
-      border-radius: 15%;
-      padding: 6px 12px;
-      color: red;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-</head>
-<body>
-  <audio id="myAudio" autoplay loop muted playsinline>
-    <source src="https://res.cloudinary.com/dhigle4nw/video/upload/v1747096287/thandie_video_s2cnjp.mp4" type="audio/mpeg">
-  </audio>
+<button id="mtnBtn">Unmute</button>
 
-  <div id="container">
-      <button id="mtnBtn">unmute</button>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var audio = document.getElementById('myAudio');
-      var muteBtn = document.getElementById('mtnBtn');
-
-      muteBtn.addEventListener('click', function () {
-        if (audio.muted) {
-          audio.muted = false;
-          muteBtn.textContent = 'mute';
-        } else {
-          audio.muted = true;
-          muteBtn.textContent = 'unmute';
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+<script>
+  document.getElementById('mtnBtn').addEventListener('click', function() {
+    // Send a message to the parent window to toggle the mute state
+    window.parent.postMessage('toggleMute', '*');
+  });
+</script>
