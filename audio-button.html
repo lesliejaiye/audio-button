@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Toggle</title>
+  <style>
+    #mtnBtn {
+      background-color: black;
+      border: none;
+      border-radius: 15%;
+      padding: 6px 12px;
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <audio id="myAudio" autoplay loop muted playsinline>
+    <source src="https://res.cloudinary.com/dhigle4nw/video/upload/v1747096287/thandie_video_s2cnjp.mp4" type="audio/mpeg">
+  </audio>
+
+  <button id="mtnBtn">unmute</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var audio = document.getElementById('myAudio');
+      var muteBtn = document.getElementById('mtnBtn');
+
+      muteBtn.addEventListener('click', function () {
+        if (audio.muted) {
+          audio.muted = false;
+          audio.play(); // Ensure it plays
+          muteBtn.textContent = 'mute';
+        } else {
+          audio.muted = true;
+          muteBtn.textContent = 'unmute';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
