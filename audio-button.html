@@ -12,10 +12,11 @@
       color: red;
       font-weight: bold;
       cursor: pointer;
+    }
+    #container {
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
   </style>
 </head>
@@ -24,7 +25,9 @@
     <source src="https://res.cloudinary.com/dhigle4nw/video/upload/v1747096287/thandie_video_s2cnjp.mp4" type="audio/mpeg">
   </audio>
 
-  <button id="mtnBtn">unmute</button>
+  <div id="container">
+      <button id="mtnBtn">unmute</button>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
