@@ -13,35 +13,39 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     #container {
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
+    #myVideo {
+      display: none; /* Hides the video display but keeps the audio */
+    }
   </style>
 </head>
 <body>
-  <audio id="myAudio" autoplay loop muted playsinline>
+  <video id="myVideo" autoplay loop muted playsinline>
     <source src="https://res.cloudinary.com/dhigle4nw/video/upload/v1747096287/thandie_video_s2cnjp.mp4" type="audio/mpeg">
-  </audio>
+  </video>
 
   <div id="container">
       <button id="mtnBtn">unmute</button>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var audio = document.getElementById('myAudio');
+     document.addEventListener('DOMContentLoaded', function () {
+      var video = document.getElementById('myVideo');
       var muteBtn = document.getElementById('mtnBtn');
 
       muteBtn.addEventListener('click', function () {
-        if (audio.muted) {
-          audio.muted = false;
-          muteBtn.textContent = 'mute';
-        } else {
-          audio.muted = true;
-          muteBtn.textContent = 'unmute';
+        if (video.paused) {
+          video.play(); 
         }
+
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? 'unmute' : 'mute';
       });
     });
   </script>
