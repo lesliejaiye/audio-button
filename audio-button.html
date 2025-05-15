@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title> Audio Toggle</title>
+  <title>Audio Toggle</title>
   <style>
     .video-wrapper {
       position: relative;
@@ -18,13 +18,13 @@
 
     #mtnBtn {
       position: absolute;
-      top: 50%;
+      bottom: 20px; /* distance from bottom of video */
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       background-color: rgba(0, 0, 0, 0.7);
       border: none;
       padding: 12px 20px;
-      color: rgba(255, 0, 0, 0.5); 
+      color: rgba(255, 0, 0, 0.7); /* semi-transparent red text */
       font-size: 16px;
       font-weight: bold;
       border-radius: 8px;
@@ -45,8 +45,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      var video = document.getElementById('myVideo');
-      var muteBtn = document.getElementById('mtnBtn');
+      const video = document.getElementById('myVideo');
+      const muteBtn = document.getElementById('mtnBtn');
 
       muteBtn.addEventListener('click', function () {
         video.muted = !video.muted;
