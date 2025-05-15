@@ -40,10 +40,6 @@
       var muteBtn = document.getElementById('mtnBtn');
 
       muteBtn.addEventListener('click', function () {
-        if (video.paused) {
-          video.play(); 
-        }
-
         video.muted = !video.muted;
         muteBtn.textContent = video.muted ? 'unmute' : 'mute';
       });
