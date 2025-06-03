@@ -23,7 +23,7 @@
       background-color: rgba(0, 0, 0, 0.7);
       border: none;
       padding: 8px 14px;
-      color: rgba(255, 0, 0, 0.7); /* semi-transparent red */
+      color: rgba(255, 0, 0, 0.7); 
       font-size: 14px;
       font-weight: bold;
       border-radius: 6px;
@@ -31,6 +31,21 @@
       z-index: 2;
       line-height: 1;
       white-space: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+     /* Mobile styles */
+    @media (max-width: 480px) {
+      #myVideo {
+        width: 320px;
+      }
+
+      #mtnBtn {
+        right: 50%;
+        transform: translateX(50%);
+      }
     }
 
 
